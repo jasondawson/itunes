@@ -13,17 +13,24 @@
           <div class="navbar-header">
             <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-music"></span> DevTunes</a>
           </div>
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" ng-model="artist" placeholder="Artist Name" >
-              <button class="btn btn-primary" ng-click="getSongData()"> Submit </button>
-            </div>
-          </form>
-        </div>
+              <form class="navbar-form navbar-left" role="search" ng-submit="getSongData()">
+                  <div class="form-group">
+                      <input type="text" class="form-control" ng-model="artist" placeholder="Search iTunes">
+                      <select class="dropdown" ng-model="mediaType" ng-options="opt.value as opt.label for opt in mediaOptions"></select>
+                      <!-- <button class="btn btn-primary" ng-click="getSongData()"> Submit </button> -->
+                    </div>
+              </form>
+               <form class="navbar-form navbar-left">
+                  <div class="form-group">
+                      <select class="dropdown" ng-model="sortBy.fields[0]" ng-options="sort.value as sort.label for sort in sortOptions"></select>
+                      <input type="text" class="form-control" ng-model="filterOptions.filterText" placeholder="Search Data">
+                      {{sortBy.fields[0]}}
+                  </div>
+                </form>
       </div>
-    </div>
+    
     <div class="panel panel-default">
-      <div class="panel-heading"> Your Search Results:</div>
+      <div class="panel-heading"></div>
      <div class="gridStyle" ng-grid="gridOptions" swap-image="defaultInfo.search"></div>
     </div>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

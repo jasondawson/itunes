@@ -1,6 +1,15 @@
+/** {
+  border: 1px solid red;
+}*/
+
 html, body {
   height: 100%;
   width: 100%;
+}
+
+.container {
+  width: 100%;
+  margin: 0;
 }
 
 .gridStyle {
@@ -11,6 +20,7 @@ html, body {
 }
 
 .ngTopPanel {
+  width: 100%;
   line-height: 25px;
 }
 
@@ -36,3 +46,14 @@ html, body {
 .ngGrid.unselectable {
   margin-top: 10px;
 }
+
+.panel-heading {
+  height: 100px;
+ }
+
+ .navbar-header, .form-group {
+  padding: 15px;
+  margin-left: 50px;
+  vertical-align: middle;
+ }
+
