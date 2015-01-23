@@ -22,9 +22,8 @@
               </form>
                <form class="navbar-form navbar-left">
                   <div class="form-group">
-                      <select class="dropdown" ng-model="sortBy.fields[0]" ng-options="sort.value as sort.label for sort in sortOptions"></select>
+                      <select class="dropdown" ng-model="sortBy" ng-options="sort.value as sort.label for sort in sortOptions" ng-change="updateSort()"></select>
                       <input type="text" class="form-control" ng-model="filterOptions.filterText" placeholder="Search Data">
-                      {{sortBy.fields[0]}}
                   </div>
                 </form>
       </div>

@@ -24,20 +24,21 @@ $scope.filterOptions = {
   filterText: ''
 };
 
-$scope.sortBy = {
-  fields: [],
-  directions: ['asc']
-};
+$scope.sortBy = $scope.sortOptions[0];
 
+$scope.updateSort = function() {
+  $scope.gridOptions.sortBy($scope.sortBy);
+}
 
 //movie, podcast, music, musicVideo, audiobook, shortFilm, tvShow, software, ebook, all
 
   $scope.gridOptions = { 
       data: 'songData',
       height: '110px',
-      showFilter: true,
+      showFilter: false,
       filterOptions: $scope.filterOptions,
-      sortInfo: $scope.sortBy/*{fields: ['Song', 'Artist', 'Collection', 'Type'], directions: ['asc']}*/,
+      sortInfo: {fields: ['Artist', 'Collection','Title'], directions: ['asc']},
+      useExternalSorting: false,
       columnDefs: [
         {field: 'Play', displayName: 'Play', width: '40px', cellTemplate: '<div class="ngCellText" ng-class="col.colIndex()"><a href="{{row.getProperty(col.field)}}" target="_blank"><img src="http://www.icty.org/x/image/Miscellaneous/play_icon30x30.png"></a></div>'},
         {field: 'Title', displayName: 'Title'},
