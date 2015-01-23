@@ -24,7 +24,7 @@ $scope.filterOptions = {
   filterText: ''
 };
 
-$scope.sortBy = $scope.sortOptions[0];
+$scope.sortBy = $scope.sortOptions[0].value;
 
 $scope.updateSort = function() {
   $scope.gridOptions.sortBy($scope.sortBy);

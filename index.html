@@ -11,18 +11,18 @@
       <div class="container">
         <div id="myContainer">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-music"></span> DevTunes</a>
+            <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-music"></span> jTunes</a>
           </div>
               <form class="navbar-form navbar-left" role="search" ng-submit="getSongData()">
                   <div class="form-group">
                       <input type="text" class="form-control" ng-model="artist" placeholder="Search iTunes">
-                      <select class="dropdown" ng-model="mediaType" ng-options="opt.value as opt.label for opt in mediaOptions"></select>
+                      <select class="btn btn-default dropdown-toggle dropdown" ng-model="mediaType" ng-options="opt.value as opt.label for opt in mediaOptions"></select>
                       <!-- <button class="btn btn-primary" ng-click="getSongData()"> Submit </button> -->
                     </div>
               </form>
                <form class="navbar-form navbar-left">
                   <div class="form-group">
-                      <select class="dropdown" ng-model="sortBy" ng-options="sort.value as sort.label for sort in sortOptions" ng-change="updateSort()"></select>
+                      <select class="btn btn-default dropdown-toggle dropdown" ng-model="sortBy" ng-options="sort.value as sort.label for sort in sortOptions" ng-change="updateSort()"></select>
                       <input type="text" class="form-control" ng-model="filterOptions.filterText" placeholder="Search Data">
                   </div>
                 </form>
